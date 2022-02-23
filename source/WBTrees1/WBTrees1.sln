@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBTrees", "WBTrees\WBTrees.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreesLab", "TreesLab\TreesLab.csproj", "{B06A0103-A28B-47AE-9F82-EC753E267FC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{B1150AB6-1616-470D-968B-A3A0682D8535}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTest", "OnlineTest\OnlineTest.csproj", "{0924F00C-60FE-4EF4-BA23-48F39E0966EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B06A0103-A28B-47AE-9F82-EC753E267FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B06A0103-A28B-47AE-9F82-EC753E267FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B06A0103-A28B-47AE-9F82-EC753E267FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1150AB6-1616-470D-968B-A3A0682D8535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1150AB6-1616-470D-968B-A3A0682D8535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1150AB6-1616-470D-968B-A3A0682D8535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1150AB6-1616-470D-968B-A3A0682D8535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0924F00C-60FE-4EF4-BA23-48F39E0966EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0924F00C-60FE-4EF4-BA23-48F39E0966EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0924F00C-60FE-4EF4-BA23-48F39E0966EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0924F00C-60FE-4EF4-BA23-48F39E0966EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
