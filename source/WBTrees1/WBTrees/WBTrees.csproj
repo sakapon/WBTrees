@@ -1,7 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net5.0;netstandard2.1</TargetFrameworks>
+    <Version>1.0.0</Version>
+    <Title>WBTrees</Title>
+    <AssemblyTitle>WBTrees</AssemblyTitle>
+    <Product>KLibrary</Product>
+    <Description>Provides a basic implementation of weight-balanced binary trees.</Description>
+    <Authors>Keiho Sakapon</Authors>
+    <Copyright>© 2022 Keiho Sakapon</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/sakapon/WBTrees</PackageProjectUrl>
+    <PackageTags>Algorithms Data Structures Weight-balanced Self-balancing Binary Search Trees</PackageTags>
+    <PackageReleaseNotes>The first release.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
