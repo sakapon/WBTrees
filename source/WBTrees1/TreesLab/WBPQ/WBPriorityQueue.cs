@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TreesLab.PQ
+namespace TreesLab.WBPQ
 {
 	[System.Diagnostics.DebuggerDisplay(@"\{{Item}\}")]
 	public class Node<T>
