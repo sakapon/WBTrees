@@ -4,6 +4,10 @@ using System.Linq;
 
 namespace WBTrees
 {
+	/// <summary>
+	/// Represents a weight-balanced binary search tree, which can be accessed by index.
+	/// </summary>
+	/// <typeparam name="T">The type of the items.</typeparam>
 	[System.Diagnostics.DebuggerDisplay(@"Count = {Count}")]
 	public abstract class WBTreeBase<T> : IEnumerable<T>
 	{

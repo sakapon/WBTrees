@@ -4,6 +4,10 @@ using System.Linq;
 
 namespace WBTrees
 {
+	/// <summary>
+	/// Represents a collection of items, sorted by an <see cref="IComparer{T}"/>.
+	/// </summary>
+	/// <typeparam name="T">The type of the items.</typeparam>
 	public abstract class WBSetBase<T> : WBTreeBase<T>
 	{
 		protected WBSetBase(IComparer<T> comparer = null) : base(comparer) { }
@@ -18,6 +22,10 @@ namespace WBTrees
 		public int GetCount(T item) => GetCount(x => Comparer.Compare(x, item) >= 0, x => Comparer.Compare(x, item) <= 0);
 	}
 
+	/// <summary>
+	/// Represents a set that does not allow duplicate items, sorted by an <see cref="IComparer{T}"/>.
+	/// </summary>
+	/// <typeparam name="T">The type of the items.</typeparam>
 	public class WBSet<T> : WBSetBase<T>
 	{
 		protected override bool IsDistinct => true;
@@ -26,6 +34,10 @@ namespace WBTrees
 		public int GetIndex(T item) => GetFirstIndex(item);
 	}
 
+	/// <summary>
+	/// Represents a set that allows duplicate items, sorted by an <see cref="IComparer{T}"/>.
+	/// </summary>
+	/// <typeparam name="T">The type of the items.</typeparam>
 	public class WBMultiSet<T> : WBSetBase<T>
 	{
 		protected override bool IsDistinct => false;
@@ -33,6 +45,11 @@ namespace WBTrees
 		public int RemoveAll(T item) => RemoveItems(x => Comparer.Compare(x, item) >= 0, x => Comparer.Compare(x, item) <= 0);
 	}
 
+	/// <summary>
+	/// Represents a collection of key-value pairs, sorted by an <see cref="IComparer{TKey}"/>.
+	/// </summary>
+	/// <typeparam name="TKey">The type of the keys.</typeparam>
+	/// <typeparam name="TValue">The type of the values.</typeparam>
 	public abstract class WBMapBase<TKey, TValue> : WBTreeBase<KeyValuePair<TKey, TValue>>
 	{
 		public IComparer<TKey> KeyComparer { get; }
@@ -63,6 +80,11 @@ namespace WBTrees
 		public int AddItems(IEnumerable<(TKey key, TValue value)> items) => AddItems(items?.Select(p => new KeyValuePair<TKey, TValue>(p.key, p.value)));
 	}
 
+	/// <summary>
+	/// Represents a map from a key to a value, sorted by an <see cref="IComparer{TKey}"/>.
+	/// </summary>
+	/// <typeparam name="TKey">The type of the keys.</typeparam>
+	/// <typeparam name="TValue">The type of the values.</typeparam>
 	public class WBMap<TKey, TValue> : WBMapBase<TKey, TValue>
 	{
 		protected override bool IsDistinct => true;
@@ -87,6 +109,11 @@ namespace WBTrees
 		}
 	}
 
+	/// <summary>
+	/// Represents a map from a key to values, sorted by an <see cref="IComparer{TKey}"/>.
+	/// </summary>
+	/// <typeparam name="TKey">The type of the keys.</typeparam>
+	/// <typeparam name="TValue">The type of the values.</typeparam>
 	public class WBMultiMap<TKey, TValue> : WBMapBase<TKey, TValue>
 	{
 		protected override bool IsDistinct => false;

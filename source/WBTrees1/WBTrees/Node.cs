@@ -4,6 +4,10 @@ using System.Linq;
 
 namespace WBTrees
 {
+	/// <summary>
+	/// Represents a node of weight-balanced binary trees.
+	/// </summary>
+	/// <typeparam name="T">The type of the item.</typeparam>
 	[System.Diagnostics.DebuggerDisplay(@"\{{Item}\}")]
 	public class Node<T>
 	{
@@ -129,6 +133,9 @@ namespace WBTrees
 		}
 	}
 
+	/// <summary>
+	/// Provides a set of extension methods for the <see cref="Node{T}"/> class.
+	/// </summary>
 	public static class NodeHelper
 	{
 		public static bool Exists<T>(this Node<T> node) => node != null;
