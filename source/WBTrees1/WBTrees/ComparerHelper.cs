@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace WBTrees
 {
+	/// <summary>
+	/// Provides a set of helper methods for the <see cref="IComparer{T}"/> generic interface.
+	/// </summary>
 	public static class ComparerHelper
 	{
 		public static IComparer<T> GetDefault<T>()
@@ -19,6 +22,10 @@ namespace WBTrees
 		}
 	}
 
+	/// <summary>
+	/// Provides a set of helper methods for the <see cref="IComparer{T}"/> generic interface.
+	/// </summary>
+	/// <typeparam name="T">The type of objects to compare.</typeparam>
 	public static class ComparerHelper<T>
 	{
 		public static IComparer<T> Create(bool descending = false)
