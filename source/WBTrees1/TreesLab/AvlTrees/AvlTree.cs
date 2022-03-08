@@ -102,7 +102,7 @@ namespace TreesLab.AvlTrees
 			Comparer = comparer ?? Comparer<T>.Default;
 		}
 
-		// Use this method to update the Root object.
+		// Call this method to update the Root object.
 		protected void SetRoot(Node<T> node)
 		{
 			Root = node;

@@ -156,7 +156,7 @@ namespace TreesLab.WBTrees
 		public Node<T> Root { get; private set; }
 		public int Count => Root?.Count ?? 0;
 
-		// Use this method to update the Root object.
+		// Call this method to update the Root object.
 		protected void SetRoot(Node<T> node)
 		{
 			Root = node;
@@ -421,7 +421,7 @@ namespace TreesLab.WBTrees
 		public IComparer<T> Comparer { get; }
 		protected abstract bool IsDistinct { get; }
 
-		// Use this method to update the Root object.
+		// Call this method to update the Root object.
 		protected void SetRoot(Node<T> node)
 		{
 			Root = node;

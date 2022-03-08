@@ -120,7 +120,7 @@ namespace TreesLab.AvlTrees201
 		public IComparer<T> Comparer { get; }
 		protected abstract bool IsDistinct { get; }
 
-		// Use this method to update the Root object.
+		// Call this method to update the Root object.
 		protected void SetRoot(Node<T> node)
 		{
 			Root = node;

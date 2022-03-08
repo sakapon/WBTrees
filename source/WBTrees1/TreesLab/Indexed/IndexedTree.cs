@@ -89,7 +89,7 @@ namespace TreesLab.Indexed
 		public Node<T> Root { get; private set; }
 		public int Count { get; private set; }
 
-		// Use this method to update the Root object.
+		// Call this method to update the Root object.
 		void SetRoot(Node<T> node)
 		{
 			Root = node;
