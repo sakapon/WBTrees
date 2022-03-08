@@ -13,10 +13,10 @@ namespace WBTrees
 			return Comparer<T>.Default;
 		}
 
-		public static IComparer<T> ToDescending<T>(this IComparer<T> c)
+		public static IComparer<T> ToDescending<T>(this IComparer<T> comparer)
 		{
-			if (c == null) throw new ArgumentNullException(nameof(c));
-			return Comparer<T>.Create((x, y) => c.Compare(y, x));
+			if (comparer == null) throw new ArgumentNullException(nameof(comparer));
+			return Comparer<T>.Create((x, y) => comparer.Compare(y, x));
 		}
 	}
 
