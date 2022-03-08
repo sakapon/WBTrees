@@ -16,7 +16,7 @@ namespace WBTrees
 		public Node<T> Root { get; private set; }
 		public int Count => Root?.Count ?? 0;
 
-		// Use this method to update the Root object.
+		// Call this method to update the Root object.
 		protected void SetRoot(Node<T> node)
 		{
 			Root = node;
