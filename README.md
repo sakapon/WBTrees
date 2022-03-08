@@ -4,3 +4,6 @@
 [![NuGet](https://img.shields.io/nuget/dt/WBTrees.svg)](https://www.nuget.org/packages/WBTrees/)
 
 Provides a basic implementation of weight-balanced binary trees.
+
+## Release Notes
+- **v1.0.1** The first release.
