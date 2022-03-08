@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 // 論理的な実現性を検証するための実装であり、.NET の設計ガイドラインには沿っていません。
