@@ -7,7 +7,7 @@ namespace TreesLab
 	{
 		public static IComparer<T> GetDefault<T>()
 		{
-			// カルチャに依存しない場合に高速化します。
+			// Speeds up a string comparison that is independent of language.
 			if (typeof(T) == typeof(string)) return (IComparer<T>)StringComparer.Ordinal;
 			return Comparer<T>.Default;
 		}
@@ -19,7 +19,6 @@ namespace TreesLab
 		}
 	}
 
-	// クラスに型引数を指定することで、Create メソッドを呼び出すときに型引数 <T, Tkey> の指定を省略できます。
 	public static class ComparerHelper<T>
 	{
 		public static IComparer<T> Create(bool descending = false)
