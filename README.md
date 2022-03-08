@@ -65,5 +65,8 @@ Install the NuGet package via Visual Studio, etc.
 
 You can also [download a single source file here](downloads), for competitive programming, etc.
 
+## Usage
+See [Usage on Wiki](https://github.com/sakapon/WBTrees/wiki/Usage).
+
 ## Release Notes
 - **v1.0.2** The first release.
