@@ -16,10 +16,12 @@ The WBTrees library contains classes as follows:
 
 All these trees are constructed from `Node<T>` objects.
 
-This library is implemented in C#.  
-See [Wiki](https://github.com/sakapon/WBTrees/wiki) for more information.
+See [Wiki](https://github.com/sakapon/WBTrees/wiki) for more information.  
+This library is written in C#.
+You are welcome to port this to other languages.
 
 ## Features
+
 ### A List by a Weight-Balanced Binary Tree
 Provides the `WBList<T>` class as a list with all `O(log n)` operations.  
 You can also use a `WBList<T>` as a double-ended queue (deque).
