@@ -23,7 +23,7 @@ namespace UnitTest.WBTrees
 			Array.Sort(a);
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(a, false);
+			set.Initialize(a, true);
 
 			for (int k = 0; k < 1000; k++)
 			{
@@ -47,7 +47,7 @@ namespace UnitTest.WBTrees
 			l.Sort();
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(l, false);
+			set.Initialize(l, true);
 
 			for (int k = 0; k < 1000; k++)
 			{
@@ -71,7 +71,7 @@ namespace UnitTest.WBTrees
 			l.Sort();
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(l, false);
+			set.Initialize(l, true);
 
 			while (l.Count > 0)
 			{
@@ -102,7 +102,7 @@ namespace UnitTest.WBTrees
 			l.Sort();
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(l, false);
+			set.Initialize(l, true);
 
 			for (int c = n; c > 0; c--)
 			{
@@ -138,7 +138,7 @@ namespace UnitTest.WBTrees
 			Array.Sort(a);
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(a, false);
+			set.Initialize(a, true);
 
 			for (int c = n; c > 0; c--)
 			{
@@ -158,7 +158,7 @@ namespace UnitTest.WBTrees
 			Array.Sort(a);
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(a, false);
+			set.Initialize(a, true);
 
 			for (int c = n; c > 0; c--)
 			{
@@ -176,7 +176,7 @@ namespace UnitTest.WBTrees
 			Array.Sort(a);
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(a, false);
+			set.Initialize(a, true);
 
 			for (int i = 0; i < n; i++)
 				set.GetAt(i).GetIndex();
