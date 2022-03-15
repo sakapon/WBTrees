@@ -76,7 +76,7 @@ namespace WBTrees
 		public int GetCount(TKey key) => GetCount(p => KeyComparer.Compare(p.Key, key) >= 0, p => KeyComparer.Compare(p.Key, key) <= 0);
 
 		public Node<KeyValuePair<TKey, TValue>> Add(TKey key, TValue value) => Add(new KeyValuePair<TKey, TValue>(key, value));
-		public void Initialize(IEnumerable<(TKey key, TValue value)> items, bool assertsItems = true) => Initialize(items?.Select(p => new KeyValuePair<TKey, TValue>(p.key, p.value)), assertsItems);
+		public void Initialize(IEnumerable<(TKey key, TValue value)> items, bool useRawItems = false) => Initialize(items?.Select(p => new KeyValuePair<TKey, TValue>(p.key, p.value)), useRawItems);
 		public int AddItems(IEnumerable<(TKey key, TValue value)> items) => AddItems(items?.Select(p => new KeyValuePair<TKey, TValue>(p.key, p.value)));
 	}
 

@@ -36,21 +36,22 @@ namespace WBTrees
 
 		public void Clear() => SetRoot(null);
 
-		public void Initialize(IEnumerable<T> items, bool assertsItems = true)
+		// Call the AddItems method to ignore duplicates.
+		public void Initialize(IEnumerable<T> items, bool useRawItems = false)
 		{
 			if (items == null) throw new ArgumentNullException(nameof(items));
 			T[] a;
-			if (assertsItems)
+			if (useRawItems)
+			{
+				a = items as T[] ?? items.ToArray();
+			}
+			else
 			{
 				// stable sort
 				a = items.OrderBy(x => x, Comparer).ToArray();
 				if (IsDistinct)
 					for (int i = 1; i < a.Length; ++i)
-						if (Comparer.Compare(a[i - 1], a[i]) == 0) throw new ArgumentException("The keys must be unique.", nameof(items));
-			}
-			else
-			{
-				a = items as T[] ?? items.ToArray();
+						if (Comparer.Compare(a[i - 1], a[i]) == 0) throw new ArgumentException("The items must be unique for the Comparer.", nameof(items));
 			}
 			SetRoot(CreateSubtree(a, 0, a.Length));
 		}
