@@ -19,7 +19,7 @@ namespace OnlineTest.WBTrees.AC
 
 			Array.Sort(a);
 			var set = new WBMultiSet<int>();
-			set.Initialize(a, false);
+			set.Initialize(a, true);
 			set.Add(-1 << 30);
 			set.Add(int.MaxValue);
 

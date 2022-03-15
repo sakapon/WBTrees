@@ -26,7 +26,7 @@ namespace OnlineTest.WBTrees.Index
 			}
 
 			var set = new WBMultiSet<int>();
-			set.Initialize(a, false);
+			set.Initialize(a, true);
 
 			return Enumerable.Range(0, a[^1] + 1).Where(l => l % 2 == 0).Max(l => set.GetCount(x => x >= l, x => x <= l + 2 * k));
 		}

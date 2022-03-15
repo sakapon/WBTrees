@@ -15,7 +15,7 @@ namespace OnlineTest.WBTrees.YLC
 			var t = Console.ReadLine();
 
 			var set = new WBSet<int>();
-			set.Initialize(Enumerable.Range(0, t.Length).Where(i => t[i] == '1'), false);
+			set.Initialize(Enumerable.Range(0, t.Length).Where(i => t[i] == '1'), true);
 
 			Console.SetOut(new System.IO.StreamWriter(Console.OpenStandardOutput()) { AutoFlush = false });
 			while (qc-- > 0)

@@ -19,7 +19,7 @@ namespace OnlineTest.WBTrees.AC
 			Array.Fill(a, -1);
 
 			var set = new WBSet<int>();
-			set.Initialize(Enumerable.Range(0, n), false);
+			set.Initialize(Enumerable.Range(0, n), true);
 
 			Console.SetOut(new System.IO.StreamWriter(Console.OpenStandardOutput()) { AutoFlush = false });
 			while (qc-- > 0)

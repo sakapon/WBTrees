@@ -17,7 +17,7 @@ namespace OnlineTest.WBTrees.PQ
 
 			Array.Sort(a);
 			var set = new WBMultiSet<long>();
-			set.Initialize(a, false);
+			set.Initialize(a, true);
 			while (m-- > 0) set.Add(set.RemoveLast().Item / 2);
 			return set.Sum();
 		}

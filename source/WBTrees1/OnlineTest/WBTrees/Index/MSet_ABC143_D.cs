@@ -17,7 +17,7 @@ namespace OnlineTest.WBTrees.Index
 
 			Array.Sort(l);
 			var set = new WBMultiSet<int>();
-			set.Initialize(l, false);
+			set.Initialize(l, true);
 
 			var r = 0;
 			for (int i = 0; i < n; i++)
