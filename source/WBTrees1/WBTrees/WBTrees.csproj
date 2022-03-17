@@ -7,13 +7,13 @@
     <AssemblyTitle>WBTrees</AssemblyTitle>
     <Product>KLibrary</Product>
     <Description>Provides a basic implementation of weight-balanced binary trees.
-- A list by a weight-balanced binary tree, with all O(log n) operations
-- Weight-balanced binary search trees, which can be accessed by index in O(log n) time</Description>
+- A list by a weight-balanced binary tree, with all O(log n) basic operations
+- A set and a map by weight-balanced binary search trees, which can be accessed by index in O(log n) time</Description>
     <Authors>Keiho Sakapon</Authors>
     <Copyright>© 2022 Keiho Sakapon</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sakapon/WBTrees</PackageProjectUrl>
-    <PackageTags>Algorithms Data Structures Weight-balanced Self-balancing Binary Search Trees</PackageTags>
+    <PackageTags>Algorithms Data Structures Weight Balanced Self Balancing Binary Search Trees</PackageTags>
     <PackageReleaseNotes>The first release.</PackageReleaseNotes>
   </PropertyGroup>
 
