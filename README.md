@@ -71,4 +71,4 @@ You can also [download a single source file here](downloads), for competitive pr
 See [Usage on Wiki](https://github.com/sakapon/WBTrees/wiki/Usage) for coding.
 
 ## Release Notes
-- **v1.0.2** The first release.
+- **v1.0.4** The first release.
