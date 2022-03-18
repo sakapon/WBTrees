@@ -47,11 +47,19 @@ namespace WBTrees
 			}
 			else
 			{
-				// stable sort
-				a = items.OrderBy(x => x, Comparer).ToArray();
 				if (IsDistinct)
+				{
+					// unstable sort
+					a = items.ToArray();
+					Array.Sort(a, Comparer);
 					for (int i = 1; i < a.Length; ++i)
 						if (Comparer.Compare(a[i - 1], a[i]) == 0) throw new ArgumentException("The items must be unique for the Comparer.", nameof(items));
+				}
+				else
+				{
+					// stable sort
+					a = items.OrderBy(x => x, Comparer).ToArray();
+				}
 			}
 			SetRoot(CreateSubtree(a, 0, a.Length));
 		}
