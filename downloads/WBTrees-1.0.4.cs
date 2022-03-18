@@ -503,21 +503,30 @@ namespace WBTrees
 
 		public void Clear() => SetRoot(null);
 
-		public void Initialize(IEnumerable<T> items, bool assertsItems = true)
+		// Call the AddItems method to ignore duplicates.
+		public void Initialize(IEnumerable<T> items, bool useRawItems = false)
 		{
 			if (items == null) throw new ArgumentNullException(nameof(items));
 			T[] a;
-			if (assertsItems)
+			if (useRawItems)
 			{
-				// stable sort
-				a = items.OrderBy(x => x, Comparer).ToArray();
-				if (IsDistinct)
-					for (int i = 1; i < a.Length; ++i)
-						if (Comparer.Compare(a[i - 1], a[i]) == 0) throw new ArgumentException("The keys must be unique.", nameof(items));
+				a = items as T[] ?? items.ToArray();
 			}
 			else
 			{
-				a = items as T[] ?? items.ToArray();
+				if (IsDistinct)
+				{
+					// unstable sort
+					a = items.ToArray();
+					Array.Sort(a, Comparer);
+					for (int i = 1; i < a.Length; ++i)
+						if (Comparer.Compare(a[i - 1], a[i]) == 0) throw new ArgumentException("The items must be unique for the Comparer.", nameof(items));
+				}
+				else
+				{
+					// stable sort
+					a = items.OrderBy(x => x, Comparer).ToArray();
+				}
 			}
 			SetRoot(CreateSubtree(a, 0, a.Length));
 		}
@@ -838,7 +847,7 @@ namespace WBTrees
 		public int GetCount(TKey key) => GetCount(p => KeyComparer.Compare(p.Key, key) >= 0, p => KeyComparer.Compare(p.Key, key) <= 0);
 
 		public Node<KeyValuePair<TKey, TValue>> Add(TKey key, TValue value) => Add(new KeyValuePair<TKey, TValue>(key, value));
-		public void Initialize(IEnumerable<(TKey key, TValue value)> items, bool assertsItems = true) => Initialize(items?.Select(p => new KeyValuePair<TKey, TValue>(p.key, p.value)), assertsItems);
+		public void Initialize(IEnumerable<(TKey key, TValue value)> items, bool useRawItems = false) => Initialize(items?.Select(p => new KeyValuePair<TKey, TValue>(p.key, p.value)), useRawItems);
 		public int AddItems(IEnumerable<(TKey key, TValue value)> items) => AddItems(items?.Select(p => new KeyValuePair<TKey, TValue>(p.key, p.value)));
 	}
 
