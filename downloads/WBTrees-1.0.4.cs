@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+// https://github.com/sakapon/WBTrees
 namespace WBTrees
 {
 	public static class ComparerHelper
