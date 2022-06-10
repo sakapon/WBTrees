@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+// A sized binary tree
 // WBList と WBMultiSet の共通部分です。
 namespace TreesLab.Indexed
 {
@@ -59,6 +60,15 @@ namespace TreesLab.Indexed
 			else if (Parent.Left == this) return Parent.GetIndex() - RightCount - 1;
 			else return Parent.GetIndex() + LeftCount + 1;
 		}
+
+		public void Walk(Action<Node<T>> preorder, Action<Node<T>> inorder, Action<Node<T>> postorder)
+		{
+			preorder?.Invoke(this);
+			Left?.Walk(preorder, inorder, postorder);
+			inorder?.Invoke(this);
+			Right?.Walk(preorder, inorder, postorder);
+			postorder?.Invoke(this);
+		}
 	}
 
 	public static class NodeHelper
@@ -73,14 +83,6 @@ namespace TreesLab.Indexed
 		}
 	}
 
-	/// <summary>
-	/// Represents an indexed tree.
-	/// </summary>
-	/// <typeparam name="T">The type of the items.</typeparam>
-	/// <remarks>
-	/// - Get by Index
-	/// - Remove by Index
-	/// </remarks>
 	[System.Diagnostics.DebuggerDisplay(@"Count = {Count}")]
 	public class IndexedTree<T> : IEnumerable<T>
 	{

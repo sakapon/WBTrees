@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-// A list by a weighted height-balanced binary tree
+// A list by a sized height-balanced binary tree
 namespace TreesLab.AvlTrees301
 {
 	[System.Diagnostics.DebuggerDisplay(@"\{{Item}\}")]
